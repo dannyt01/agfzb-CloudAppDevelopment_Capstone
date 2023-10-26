@@ -11,6 +11,8 @@ urlpatterns = [
 
     # path for about view
 
+    # path('about/', views.about_view, name='about'),
+
     # path for contact us view
 
     # path for registration
