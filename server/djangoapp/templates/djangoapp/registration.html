@@ -1,11 +1,148 @@
-<!DOCTYPE html>
+{% load crispy_forms_tags %} {% block content %}
+<div class="content-section">
+  <form method="post">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Join Today</legend>
+      {{ form.as_p }}
+    </fieldset>
+    <div class="form-group">
+      <button class="btn btn-outline-info" type="submit">Sign Up</button>
+    </div>
+  </form>
+  <div class="border-top pt-3">
+    <small class="text-muted">
+      Already Have An Account? <a class="ml-2" href="#">Sign In</a>
+    </small>
+  </div>
+</div>
+{% endblock content %}
+
+<!-- <!DOCTYPE html>
+<html lang="en"> -->
+<!-- <head>
+    <meta charset="UTF-8" />
+    <title>Registration</title>
+  </head>
+  <body>
+    <h2>Registration</h2>
+    <form method="post">
+      {% csrf_token %} -->
+
+<!-- Username -->
+<!-- <label for="id_username">Username:</label>
+      <input type="text" id="id_username" name="username" required />
+      <br /> -->
+
+<!-- Email -->
+<!-- <label for="id_email">Email:</label>
+      <input type="email" id="id_email" name="email" required />
+      <br /> -->
+
+<!-- Password -->
+<!-- <label for="id_password">Password:</label>
+      <input type="password" id="id_password" name="password" required />
+      <br /> -->
+
+<!-- Confirm Password -->
+<!-- <label for="id_confirm_password">Confirm Password:</label>
+      <input
+        type="password"
+        id="id_confirm_password"
+        name="confirm_password"
+        required
+      />
+      <br /> -->
+
+<!-- <button type="submit">Register</button>
+    </form>
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% load static %}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-    <body>
-    <!--Add a registration form here -->
-    </body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registration</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <form id="form" class="mt-5">
+        <h1 class="mb-4">Sign up</h1>
+        <div class="form-group">
+          <label for="username">Your Username</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"
+                ><i class="fa fa-users" aria-hidden="true"></i
+              ></span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              placeholder="Enter Your Username"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="first_name">First Name</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"
+                ><i class="fa fa-user" aria-hidden="true"></i
+              ></span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              id="first_name"
+              placeholder="Enter Your First Name"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="last_name">Last Name</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"
+                ><i class="fa fa-user" aria-hidden="true"></i
+              ></span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              id="last_name"
+              placeholder="Enter Your Last Name"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Your Password</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"
+                ><i class="fa fa-lock" aria-hidden="true"></i
+              ></span>
+            </div>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Enter Your Password"
+            />
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Sign up</button>
+      </form>
+    </div>
+  </body>
+</html> -->
