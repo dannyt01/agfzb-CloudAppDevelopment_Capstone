@@ -20,8 +20,8 @@ def main(param_dict):
 
     try:
         client = Cloudant.iam(
-            account_name=param_dict["COUCH_USERNAME"],
-            api_key=param_dict["IAM_API_KEY"],
+            account_name=param_dict["dec6c135-621d-4bc2-a849-35a162eba40d-bluemix"],
+            api_key=param_dict["MezJ3bqj6O53B4XLZcR6EcmGzhoT36I6ECt6hvyZByNG"],
             connect=True,
         )
         print(f"Databases: {client.all_dbs()}")
