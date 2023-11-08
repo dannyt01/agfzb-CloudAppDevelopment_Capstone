@@ -5,7 +5,7 @@ Returns:
 """
 from cloudant.client import Cloudant
 from cloudant.error import CloudantException
-import requests
+import requests 
 
 
 def main(param_dict):
