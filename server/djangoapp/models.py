@@ -4,11 +4,11 @@ from django.contrib import admin
 # from .models import CarMake, CarModel  # Import your models here
 
 # Register your models here.
-CAR_TYPE_CHOICES = [
-    ('Sedan', 'Sedan'),
-    ('SUV', 'SUV'),
-    ('WAGON', 'WAGON'),
-]
+# CAR_TYPE_CHOICES = [
+#     ('Sedan', 'Sedan'),
+#     ('SUV', 'SUV'),
+#     ('WAGON', 'WAGON'),
+# ]
 
 class CarMake(models.Model):
     name = models.CharField(max_length=100)
@@ -18,6 +18,11 @@ class CarMake(models.Model):
         return self.name
 
 class CarModel(models.Model):
+    CAR_TYPE_CHOICES = [
+    ('Sedan', 'Sedan'),
+    ('SUV', 'SUV'),
+    ('WAGON', 'WAGON'),
+]
     car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
     dealer_id = models.IntegerField()
     name = models.CharField(max_length=100)
@@ -27,7 +32,51 @@ class CarModel(models.Model):
     def __str__(self):
         return f"{self.car_make.name} - {self.name} ({self.year})"
 
+class CarDealer:
 
+    def __init__(self, address, city, full_name, id, lat, long, short_name, st, zip):
+        # Dealer address
+        self.address = address
+        # Dealer city
+        self.city = city
+        # Dealer Full Name
+        self.full_name = full_name
+        # Dealer id
+        self.id = id
+        # Location lat
+        self.lat = lat
+        # Location long
+        self.long = long
+        # Dealer short name
+        self.short_name = short_name
+        # Dealer state
+        self.st = st
+        # Dealer zip
+        self.zip = zip
+
+    def __str__(self):
+        return "Dealer name: " + self.full_name
+
+class DealerReview(models.Model):
+    dealership = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    purchase = models.BooleanField()
+    review = models.TextField()
+    purchase_date = models.DateField()
+    car_make = models.CharField(max_length=255)
+    car_model = models.CharField(max_length=255)
+    car_year = models.IntegerField()
+    sentiment = models.CharField(max_length=10)  # positive, neutral, or negative
+    id = models.AutoField(primary_key=True)
+
+    def __str__(self):
+        return f"Review for {self.dealership} by {self.name}"
+    
+
+
+
+
+    
 # CAR_TYPE_CHOICES = [
 #     ('Sedan', 'Sedan'),
 #     ('SUV', 'SUV'),

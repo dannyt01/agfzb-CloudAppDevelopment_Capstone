@@ -22,7 +22,9 @@ from djangoapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('djangoapp/', include('djangoapp.urls')),
+    # path('djangoapp/', include('djangoapp.urls')),
+    # path(route='', view=views.get_dealerships, name='index'),
+    path('djangoapp/', views.get_dealerships, name='index'),
     path('about/', views.about_view, name='about'),
     path('contact/', views.contact_view, name='contact'),
     path("accounts/", include("django.contrib.auth.urls")),
@@ -30,4 +32,6 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='djangoapp/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='djangoapp/logout.html'), name='logout'),
     path('registration/', views.registration_request, name='registration'),
+    path('dealer/<int:dealer_id>/', views.get_dealer_details, name='dealer_details'),
+    path('dealer/<int:dealer_id>/add_review/', views.add_review, name='add_review'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
